@@ -1,0 +1,15 @@
+<h1><%= @student.first_name %> <%= @student.last_name %></h1>
+
+<h2>Courses</h2>
+<ul>
+  <% @student.courses.each do |course| %>
+  <li><%= link_to course.course_name, course_path(course.id) %></li>
+  <% end %>
+</ul>
+
+<% if current_user %>
+  <%= link_to 'Edit this Student', edit_student_path(@student.id) %>
+<% end %>
+
+<h2><%= link_to 'View all Courses', courses_path %></h2>
+<h2><%= link_to 'View all Students', students_path %></h2>

@@ -1,0 +1,33 @@
+<h1><%= @course.course_name %></h1>
+
+<h2>Students</h2>
+<ul>
+  <% @course.students.each do |student| %>
+  <li><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %></li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+
+<h2>Add Students to this Course</h2>
+<% #maybe this would make more sense as just a list with buttons - not select %>
+<%= form_for [@course] do |form| %>
+  <select name="students">
+  <% @student.each do |student| %>
+  <% #need to add conditional to only show students not in this course %>
+  <option value=student><%= student.first_name %></option> 
+  <% end %>   
+  </select></br>
+  <%= button_to "Add This Student", {:controller => :courses, :action => 'add_student'}, :method => :put, :class => "btn" %>
+<% end %>
+
+<br>
+<br>
+
+<% if current_user %>
+  <%= link_to 'Edit this Course', edit_course_path(@course.id) %>
+<% end %>
+
+<h2><%= link_to 'View all Courses', courses_path %></h2>
+<h2><%= link_to 'View all Students', students_path %></h2>
