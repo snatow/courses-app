@@ -11,15 +11,14 @@
 <br>
 
 <h2>Add Students to this Course</h2>
-<% #maybe this would make more sense as just a list with buttons - not select %>
 <%= form_for [@course] do |form| %>
-  <select name="students">
-  <% @student.each do |student| %>
-  <% #need to add conditional to only show students not in this course %>
-  <option value=student><%= student.first_name %></option> 
-  <% end %>   
-  </select></br>
-  <%= button_to "Add This Student", {:controller => :courses, :action => 'add_student'}, :method => :put, :class => "btn" %>
+  <ul>
+    <% @student.each do |student| %>
+      <% unless @course.students.include?(student) %>
+        <li><%= student.first_name %> <%= student.last_name %>  <%= button_to "Add #{student.first_name}", {:controller => :courses, :action => 'add_student', :student_id => student.id }, :method => :put, :class => "btn" %></li> 
+        <% end %>
+      <% end %>   
+    </ul></br>
 <% end %>
 
 <br>
