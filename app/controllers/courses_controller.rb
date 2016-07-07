@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :remove_student]
+  #you must be logged in as a user to access these actions
+  before_action :authenticate_user!, only: [:edit, :update, :remove_student]
 
   def index
     @course = Course.all
@@ -44,6 +46,12 @@ class CoursesController < ApplicationController
     course = Course.find(params[:id])
     course.students << student
     redirect_to course_path(course)
+  end
+
+  def remove_student
+    student = Student.find(params[:student_id])
+    student.courses.delete(@course)
+    redirect_to edit_course_path(@course)
   end
 
   private

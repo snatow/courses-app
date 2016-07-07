@@ -11,14 +11,13 @@
 <br>
 
 <h2>Add Students to this Course</h2>
-  <ul>
-    <% @student.each do |student| %>
-      <%= form_tag add_student_course_path(@course.id, :course_name => @course.course_name), {:method => :put} %>
-        <% unless @course.students.include?(student) %>
-          <li><%=student.first_name%><%=submit_tag "Add #{student.first_name}", :class => "btn", value: student.id %></li> 
-          <% end %>
-        <% end %>   
-  </ul></br>
+ <ul>
+   <% @student.each do |student| %>
+     <% unless @course.students.include?(student) %>
+       <li><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %>  <%= button_to "Add #{student.first_name}", {:controller => :courses, :action => 'add_student', :student_id => student.id }, :method => :put, :class => "btn" %></li> 
+       <% end %>
+     <% end %>   
+   </ul></br>
 <br>
 <br>
 
