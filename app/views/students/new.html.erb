@@ -1,9 +1,11 @@
 <h1>New Student</h1>
 
-<%= form_for [@student] do |form| %>
-  <%= form.label :first_name %>: <%= form.text_field :first_name %></br>
-  <%= form.label :last_name %>: <%= form.text_field :last_name %></br>
-  <%= form.submit :class => "btn" %>
-<% end %>
+<div class="contain">
+  <%= form_for [@student] do |form| %>
+    <%= form.label :first_name %>: <%= form.text_field :first_name %></br>
+    <%= form.label :last_name %>: <%= form.text_field :last_name %></br>
+    <%= form.submit :class => "btn" %>
+  <% end %>
+</div>
 
-<h2><%= link_to 'View all Students', students_path %></h2>
+<h4><%= link_to 'View all Students', students_path %></h4>

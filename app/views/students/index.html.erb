@@ -1,12 +1,14 @@
 <h1>All Students</h1>
 
-<% @student.each do |student| %>
-  <h2><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %></h2>
-  <h3>Number of Courses: <%= student.courses.count %></h3>
-<% end %>
+<div class="contain">
+  <% @student.each do |student| %>
+    <h2><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %></h2>
+    <h3 class="indent">Number of Courses: <%= student.courses.count %></h3>
+  <% end %>
 
-<% if current_user %>
-  <%= link_to 'New Student', new_student_path %>
-<% end %>
+  <% if current_user %>
+    <h3 class="new-link"><%= link_to 'New Student', new_student_path %></h3>
+  <% end %>
+</div>
 
-<h2><%= link_to 'View all Courses', courses_path %></h2>
+<h4><%= link_to 'View all Courses', courses_path %></h4>

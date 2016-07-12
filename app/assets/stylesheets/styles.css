@@ -1,3 +1,98 @@
+body {
+  background-color: #f8f3e7;
+}
+
 .button_to {
   display: inline
+}
+
+a {
+  text-decoration: none;
+  color: #3253A5;
+}
+
+a:hover {
+  color: #4a32a5;
+}
+
+.log-in-link {
+  float: right;
+  font-size: 1.2em;
+}
+
+.edit-profile-link {
+  font-size: 1.2em;
+}
+
+.sign-up-link {
+  font-size: 1.2em;
+}
+
+.log-out-link {
+  float: right;
+  font-size: 1.2em;
+}
+
+h1 {
+  text-align: center;
+  /*font-size: 4em;*/
+}
+
+.contain {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.indent {
+  margin-left: 3%;
+}
+
+.btn {
+  background-color: #328da5;
+  color: white;
+  border: 2px solid black;
+  font-size: .8em;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.foot-link {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 150px;
+}
+
+.link-right {
+  margin-left: 49%;
+}
+
+.footer {
+  width: 604px;
+  margin: 0 auto;
+}
+
+h4 {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.new-link {
+  margin-bottom: 100px;
+}
+
+input {
+  margin-bottom: 15px;
+  font-size: 1em;
+  border: 1px solid black;
+}
+
+label {
+  font-size: 1.2em;
 }

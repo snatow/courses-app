@@ -1,24 +1,28 @@
 <h1><%= @student.first_name %> <%= @student.last_name %></h1>
 
-<h2>Courses</h2>
-<ul>
-  <% @student.courses.each do |course| %>
-  <li><%= link_to course.course_name, course_path(course.id) %>  <%= button_to "Remove #{@student.first_name} from #{course.course_name}", {:controller => :students, :action => 'remove_course', :course_id => course.id }, :delete => :put, :class => "btn" %></li>
-  <% end %>
-</ul>
+<div class="contain">
+  <h2>Courses</h2>
+  <ul>
+    <% @student.courses.each do |course| %>
+    <li><%= link_to course.course_name, course_path(course.id) %>  <%= button_to "Remove #{@student.first_name} from #{course.course_name}", {:controller => :students, :action => 'remove_course', :course_id => course.id }, :delete => :put, :class => "btn" %></li>
+    <% end %>
+  </ul>
 
-<h2>Add Courses for this Student</h2>
- <ul>
-   <% @course.each do |course| %>
-     <% unless @student.courses.include?(course) %>
-       <li><%= link_to course.course_name, course_path(course.id) %>  <%= button_to "Add #{course.course_name}", {:controller => :students, :action => 'add_course', :course_id => course.id }, :method => :put, :class => "btn" %></li> 
-       <% end %>
-     <% end %>   
-   </ul></br>
+  <h2>Add Courses for this Student</h2>
+   <ul>
+     <% @course.each do |course| %>
+       <% unless @student.courses.include?(course) %>
+         <li><%= link_to course.course_name, course_path(course.id) %>  <%= button_to "Add #{course.course_name}", {:controller => :students, :action => 'add_course', :course_id => course.id }, :method => :put, :class => "btn" %></li> 
+         <% end %>
+       <% end %>   
+     </ul></br>
+</div>
 
 <% if current_user %>
-  <%= link_to 'Edit this Student', edit_student_path(@student.id) %>
+  <h3 class="center"><%= link_to 'Edit this Student', edit_student_path(@student.id) %></h3>
 <% end %>
 
-<h2><%= link_to 'View all Courses', courses_path %></h2>
-<h2><%= link_to 'View all Students', students_path %></h2>
+<div class="footer">
+  <div class="foot-link"><%= link_to 'View all Courses', courses_path %></div>
+  <div class="foot-link link-right"><%= link_to 'View all Students', students_path %></div>
+</div>
