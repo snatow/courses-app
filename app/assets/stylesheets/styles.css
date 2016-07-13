@@ -1,5 +1,7 @@
 body {
   background-color: #f8f3e7;
+  /*font-size: 14pt;*/
+  width: 340px;
 }
 
 .button_to {
@@ -17,20 +19,20 @@ a:hover {
 
 .log-in-link {
   float: right;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .edit-profile-link {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .sign-up-link {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .log-out-link {
   float: right;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 h1 {
@@ -51,26 +53,26 @@ h1 {
   background-color: #328da5;
   color: white;
   border: 2px solid black;
-  font-size: .8em;
+  font-size: .8rem;
 }
 
 li {
   margin-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .foot-link {
   display: inline-block;
   box-sizing: border-box;
-  width: 150px;
+  width: 115px;
 }
 
 .link-right {
-  margin-left: 49%;
+  margin-left: 31%;
 }
 
 .footer {
-  width: 604px;
+  width: 340px;
   margin: 0 auto;
 }
 
@@ -94,5 +96,47 @@ input {
 }
 
 label {
-  font-size: 1.2em;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 430px) {
+  body {
+    width: 365px;
+  }
+
+  .foot-link {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 115px;
+  }
+
+  .link-right {
+    margin-left: 22%;
+  }
+
+  .footer {
+    width: 604px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  body {
+    width: auto;
+  }
+
+  .foot-link {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 150px;
+  }
+
+  .link-right {
+    margin-left: 49%;
+  }
+
+  .footer {
+    width: 604px;
+    margin: 0 auto;
+  }
 }

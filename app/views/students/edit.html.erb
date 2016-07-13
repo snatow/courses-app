@@ -1,13 +1,15 @@
 <h1>Editing <%= @student.first_name %></h1>
 
-<%= form_for [@student] do |form| %>
-  <%= form.label :first_name %>: <%= form.text_field :first_name %></br>
-  <%= form.label :last_name %>: <%= form.text_field :last_name %></br></br>
-  <%= form.submit :class => "btn" %>
-<% end %>
-<br>
-<br>
-<%= button_to "Delete #{@student.first_name}", {:controller => :students, :action => 'destroy', :id => @student.id }, :method => :delete, :class => "btn" %>
+<div class="contain">
+  <%= form_for [@student] do |form| %>
+    <%= form.label :first_name %>: <%= form.text_field :first_name %></br>
+    <%= form.label :last_name %>: <%= form.text_field :last_name %></br></br>
+    <%= form.submit :class => "btn" %>
+  <% end %>
+  <br>
+  <br>
+  <%= button_to "Delete #{@student.first_name}", {:controller => :students, :action => 'destroy', :id => @student.id }, :method => :delete, :class => "btn" %>
+</div>
 
 <div class="footer">
   <div class="foot-link"><%= link_to 'View all Courses', courses_path %></div>
