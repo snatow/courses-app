@@ -2,4 +2,4 @@
 
 This is an example application using rails and sql with many to many relationships
 
-A deployed version of this app can be found [here](https://courses-students-app.herokuapp.com/)
+A deployed version of this app can be found {here}[https://courses-students-app.herokuapp.com/]
